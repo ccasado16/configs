@@ -2,8 +2,6 @@ from libqtile import bar, widget
 from libqtile.config import Screen
 from settings.widgets import bar_separator, network_monitor, keyboard_layout, icon
 
-# from settings.widgets import primary_widgets
-
 
 # only left the app name
 def remove_excess_info(name):
@@ -58,7 +56,9 @@ def right_side_widgets():
             volume_app="pavucontrol",
         ),
         *bar_separator(),
-        widget.Battery(),
+        widget.Battery(
+            format="{char}   {percent:2.0%}",
+        ),
     ]
 
 
