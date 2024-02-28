@@ -5,3 +5,4 @@
 # Except this files and folders:
 !fish
 !rofi
+!qtile
