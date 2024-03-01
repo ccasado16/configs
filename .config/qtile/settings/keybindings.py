@@ -81,5 +81,6 @@ keys = [
             "XF86AudioRaiseVolume",
             lazy.spawn(QTILE_SCRIPTS + "raise-volume.sh"),
         ),
+        ([], "Print", lazy.spawn(QTILE_SCRIPTS + "screenshot.sh"))
     ]
 ]
