@@ -39,6 +39,8 @@ def network_monitor():
             # interface="wlan0",
             interface="wlp2s0",
             format="{percent:2.0%}  •  {essid}",
+            diconnected_message=' • Disconnected'
+
         ),
     ]
 

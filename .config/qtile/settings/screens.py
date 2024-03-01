@@ -34,7 +34,7 @@ def middle_side_widgets():
     return [
         widget.Spacer(),
         widget.Clock(
-            format="   %a %d %b %Y        %H:%M:%S",
+            format="   %a %d %b %Y   •      %H:%M:%S",
         ),
         widget.Spacer(),
     ]
