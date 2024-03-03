@@ -1,0 +1,163 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/os-logo",
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "hyprland/language",
+        "network",
+        "backlight",
+        "pulseaudio",
+        "battery"
+    ],
+    // Modules configuration
+    "custom/os-logo": {
+        "format": ""
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "active": "",
+            "empty": "",
+            "urgent": ""
+        },
+        "active-only": false,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 40,
+        "tooltip": true,
+        "rewrite": {
+            "(.*) - Google Chrome": "Google Chrome",
+            // for alacritty
+            "alacritty": "$1",
+            // for vscode
+            "(.*) - (.*) - Visual Studio Code": "Visual Studio Code: $1"
+        }
+    },
+    "clock": {
+        "interval": 60,
+        "timezone": "America/Lima",
+        "format": "  {:%H:%M  •    %a %d %b %Y} ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "months",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
+    "hyprland/language": {
+        "format": "󰌌 {}",
+        "format-en": "en",
+        "format-es": "es"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface,
+        "interval": 1,
+        // "format-wifi": "{bandwidthDownBytes}    {bandwidthUpBytes}  •    {essid} ({signalStrength}%) ",
+        "format-wifi": "  {essid} ({signalStrength}%) ",
+        // "format-ethernet": "{bandwidthDownBytes}    {bandwidthUpBytes}  •  {ipaddr}/{cidr} 󰈀",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "tooltip-format": "{ifname}:{ipaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "reverse-mouse-scrolling": false,
+        "reverse-scrolling": true
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "{icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "headset": "󰋎",
+            "phone": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "interval": 1,
+        "states": {
+            "good": 95,
+            "warning": 40,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon}󱐋",
+        "format-plugged": "{capacity}% {icon}",
+        "format-icons": [
+            // "󰂎",
+            // "󰁺",
+            // "󰁻",
+            // "󰁼",
+            // "󰁽",
+            // "󰁾",
+            // "󰁿",
+            // "󰂀",
+            // "󰂁",
+            // "󰂂",
+            // "󰁹"
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ]
+    }
+}
