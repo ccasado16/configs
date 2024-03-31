@@ -1,0 +1,44 @@
+#!/usr/bin/bash
+
+# Script to manage brightness
+# User must belong to video group to use this script
+
+# backlight path
+CARD_PATH=`ls /sys/class/backlight/ | head -n 1`
+
+# get brightness
+get_brightness() {
+    # Use light to get the system's brightness
+    brightness=$(light -G)
+    echo $brightness
+}
+
+increase_brightness() {
+    # Increase brightness by 5%
+    light -A 5
+}
+
+decrease_brightness() {
+    # Decrease brightness by 5%
+    light -U 5
+}
+
+# Check if xbacklight is installed and Execute according to the argument passed
+if [ -x "$(command -v light)" ]; then
+  case $1 in
+    "get")
+      get_brightness
+      ;;
+    "up")
+      increase_brightness
+      ;;
+    "down")
+      decrease_brightness
+      ;;
+    *)
+      echo "Usage: brightness [get|up|down]"
+      ;;
+  esac
+else
+  echo "light is not installed. Please install it to use this script."
+fi

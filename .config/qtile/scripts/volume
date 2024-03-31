@@ -1,0 +1,57 @@
+#!/usr/bin/bash
+
+# Script to manage speaker volume
+
+get_volume() {
+  # Use pulsemixer to get the system's volume and cut the percentage output
+  volume=$(pulsemixer --get-volume | cut -d ' ' -f 1)
+  echo $volume
+}
+
+# Increase volume
+increase_volume() {
+    # if volume is muted then unmute it
+    if [ "$(pulsemixer --get-mute)" = "1" ]; then
+        pulsemixer --unmute
+    fi
+    # Increase volume by 5%
+    pulsemixer --max-volume 100 --change-volume +5
+}
+
+# Decrease volume
+decrease_volume() {
+    # if volume is muted keep it muted
+    # Decrease volume by 5%
+    pulsemixer --max-volume 100 --change-volume -5
+}
+
+toggle_mute() {
+    if [ "$(pulsemixer --get-mute)" = "1" ]; then
+        pulsemixer --toggle-mute
+    else
+        pulsemixer --toggle-mute
+    fi
+}
+
+# Check if pulsemixer is installed and Execute according to the argument passed
+if [ -x "$(command -v pulsemixer)" ]; then
+  case $1 in
+    "get")
+      get_volume
+      ;;
+    "up")
+      increase_volume
+      ;;
+    "down")
+      decrease_volume
+      ;;
+    "toggle-mute")
+      toggle_mute
+      ;;
+    *)
+      echo "Usage: volume.sh [get|up|down|toggle-mute]"
+      ;;
+  esac
+else
+  echo "pulsemixer is not installed. Please install it to use this script."
+fi
