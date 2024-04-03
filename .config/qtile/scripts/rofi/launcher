@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+QTILE_DIR="$HOME/.config/qtile"
+RASI="$QTILE_DIR/theme/rofi/launcher.rasi"
+
+# Run
+rofi -show drun -theme ${RASI}

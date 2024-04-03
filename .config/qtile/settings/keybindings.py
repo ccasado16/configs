@@ -15,10 +15,14 @@ FILE_MANAGER = "thunar"
 # Scripts
 volume = QTILE_SCRIPTS + "volume"
 brightness = QTILE_SCRIPTS + "brightness"
+rofi_applets = QTILE_SCRIPTS + "rofi"
 
 keys = [
-    # Rofi
-    Key([SUPER], "Return", lazy.spawn("rofi -show drun"), desc="Spawn rofi"),
+    # Rofi applets
+    # Key([SUPER], "Return", lazy.spawn("rofi -show drun"), desc="Spawn rofi"),
+    Key(
+        [SUPER], "Return", lazy.spawn(f"{rofi_applets}/launcher"), "Spawn rofi applets"
+    ),
     # Function keys: Volume --
     Key(
         [],
