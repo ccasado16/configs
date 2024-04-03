@@ -1,16 +1,16 @@
 from libqtile.config import Drag, Click
 from libqtile.command import lazy
-from settings.keybindings import MOD
+from settings.keybindings import SUPER
 
 mouse = [
     Drag(
-        [MOD],
+        [SUPER],
         "Button1",
         lazy.window.set_position_floating(),
         start=lazy.window.get_position(),
     ),
     Drag(
-        [MOD], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
+        [SUPER], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
     ),
-    Click([MOD], "Button2", lazy.window.bring_to_front()),
+    Click([SUPER], "Button2", lazy.window.bring_to_front()),
 ]

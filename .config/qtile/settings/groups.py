@@ -1,7 +1,7 @@
 from libqtile.config import Key, Group
 from libqtile.command import lazy
 
-from settings.keybindings import MOD, keys
+from settings.keybindings import SUPER, keys
 
 # from settings.keys import MOD, keys
 
@@ -12,7 +12,7 @@ for i in groups:
         [
             # mod1 + group number = switch to group
             Key(
-                [MOD],
+                [SUPER],
                 i.name,
                 lazy.group[i.name].toscreen(),
                 desc="Switch to group {}".format(i.name),
@@ -27,7 +27,7 @@ for i in groups:
             # Or, use below if you prefer not to switch to that group.
             # # mod1 + shift + group number = move focused window to group
             Key(
-                [MOD, "shift"],
+                [SUPER, "shift"],
                 i.name,
                 lazy.window.togroup(i.name),
                 desc="move focused window to group {}".format(i.name),

@@ -4,7 +4,7 @@ from libqtile import qtile
 from libqtile import hook
 
 from settings.groups import groups
-from settings.keybindings import keys, MOD
+from settings.keybindings import keys, SUPER
 from settings.layouts import floating_layout, layouts
 from settings.mouse import mouse
 from settings.paths import QTILE_SCRIPTS
