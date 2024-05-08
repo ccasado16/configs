@@ -1,2 +1,7 @@
 #!/bin/bash
-grim $HOME/Pictures/Screenshots/$(date +'%H:%M:%S-%m-%d-%Y').png
+
+SCREENSHOT_HOME=$HOME/Pictures/Screenshots
+IMG=$(date +'%H:%M:%S-%m-%d-%Y').png
+
+grim $SCREENSHOT_HOME/$IMG
+wl-copy < $SCREENSHOT_HOME/$IMG
