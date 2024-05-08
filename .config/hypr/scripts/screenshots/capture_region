@@ -4,4 +4,4 @@ SCREENSHOT_HOME=$HOME/Pictures/Screenshots
 IMG=$(date +'%H:%M:%S-%m-%d-%Y').png
 
 grim -g "$(slurp)" $SCREENSHOT_HOME/$IMG
-wl-copy < $SCREENSHOT_HOME/$img
+wl-copy < $SCREENSHOT_HOME/$IMG
