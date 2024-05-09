@@ -1,0 +1,5 @@
+/* Text Font */
+
+* {
+    font: "Hack Nerd Font 14";
+}
