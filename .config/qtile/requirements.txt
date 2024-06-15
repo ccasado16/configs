@@ -1,0 +1,17 @@
+cairocffi==1.6.1
+cffi==1.16.0
+cfgv==3.4.0
+distlib==0.3.8
+filelock==3.13.3
+identify==2.5.35
+nodeenv==1.8.0
+platformdirs==4.2.0
+pre-commit==3.7.0
+pycairo==1.26.0
+pycparser==2.22
+PyGObject==3.48.1
+PyGObject-stubs==2.11.0
+PyYAML==6.0.1
+qtile==0.24.0
+virtualenv==20.25.1
+xcffib==1.5.0
